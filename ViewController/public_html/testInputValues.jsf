@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="testInputValues.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelFormLayout id="pfl1" >
+                <f:facet name="footer">
+                    <af:panelGroupLayout id="pgl1">
+                        <af:button text="button 1" id="b1" actionListener="#{testInputValues.goAction}"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <af:inputText label="input 1" id="it2" binding="#{testInputValues.in1}" autoSubmit="true"/>
+                <af:inputText label="Input 2" id="it1" binding="#{testInputValues.in2}" autoSubmit="true"/>
+                <af:outputText id="ot1" binding="#{testInputValues.out1}"
+                               value="#{testInputValues.in2.value} Out Val    #{testInputValues.in1.value}"
+                               partialTriggers="it2 it1"/>
+            </af:panelFormLayout>
+        </af:form>
+    </af:document>
+</f:view>
